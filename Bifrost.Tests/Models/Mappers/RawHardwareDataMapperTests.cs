@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Bifrost.Models;
 using Bifrost.Models.Enums;
+using Bifrost.External.Requests;
 using Bifrost.Models.Mappers;
+using Bifrost.Tests.Mocks.External;
 using Xunit;
 using PackUtils;
 
@@ -10,39 +12,73 @@ namespace Bifrost.Tests.Models.Mappers
 {
     public class RawHardwareDataMapperTests
     {
-        //TODO - Implement more tests on this class
         [Fact]
         public void MapRawHardwareData_Should_Return_Valid_RawHardwareData_Object()
         {
             // arrange
-            string code = "20211004001";
-            string sender = "scrapper01";
-            List<string> keywords = new List<string>() {"cpu", "amd"};
-            int year = 2021;
-            int month = 04;
-            int day = 10;
-            int hour = 15;
-            int minute = 04;
-            int second = 59;
-            DateTime createdAt = new DateTime(2021, 04, 10, 15, 04, 59);
-            bool priority = false;
-            string name = "AMD Ryzen 7 5800";
-            Decimal price = (Decimal)2800.00;
-            string storeName = "Kabum";
-            string storeUrl = "https://www.kabum.com.br";
-            bool isMarketPlace = false;
-            bool HasDiscount = false;
-            bool IsNoInterestInstallmentsAvailable = false;
-            string category = HardwareCategory.CPU.GetDescriptionFromEnum();
-            string manufacturer = "AMD";
-            int yearReleased = 2020;
+            WebScrapperHardwareDataRequest requestMock =
+                WebScrapperHardwareDataRequestMock.GetDefaultWebScrapperHardwareDataRequestMock();
+            RawHardwareData dataMock = RawHardwareDataMock.GetDefaultRawHardwareData();
             
             // act
-            RawHardwareData resultData = RawHardwareDataMapper.MapRawHardwareData();
+            RawHardwareData resultData = RawHardwareDataMapper.MapRawHardwareData(requestMock);
             
-            // arrage
-            Assert.Equal(resultData.code, code);
+            // assert
+            Assert.Equal(dataMock.Code, resultData.Code);
+            Assert.Equal(dataMock.RequisitionCode, resultData.RequisitionCode);
+            Assert.Equal(dataMock.KeywordsUsed, resultData.KeywordsUsed);
+            Assert.Equal(dataMock.YearCreated, resultData.YearCreated);
+            Assert.Equal(dataMock.MonthCreated, resultData.MonthCreated);
+            Assert.Equal(dataMock.DayCreated, resultData.DayCreated);
+            Assert.Equal(dataMock.HourCreated, resultData.HourCreated);
+            Assert.Equal(dataMock.MinuteCreated, resultData.MinuteCreated);
+            Assert.Equal(dataMock.SecondCreated, resultData.SecondCreated);
+            Assert.Equal(dataMock.IsPriority, resultData.IsPriority);
+            Assert.Equal(dataMock.Name, resultData.Name);
+            Assert.Equal(dataMock.Price, resultData.Price);
+            Assert.Equal(dataMock.StoreName, resultData.StoreName);
+            Assert.Equal(dataMock.StoreUrl, resultData.StoreUrl);
+            Assert.Equal(dataMock.IsMarketPlace, resultData.IsMarketPlace);
+            Assert.Equal(dataMock.HasDiscount, resultData.HasDiscount);
+            Assert.Equal(dataMock.Discount, resultData.Discount);
+            Assert.Equal(dataMock.TotalPrice, resultData.TotalPrice);
+            Assert.Equal(dataMock.IsNoInterestInstallmentsAvailable, resultData.IsNoInterestInstallmentsAvailable);
+            Assert.Equal(dataMock.MaxInstallmentsWithoutInterest, resultData.MaxInstallmentsWithoutInterest);
+            Assert.Equal(dataMock.Category, resultData.Category);
+            Assert.Equal(dataMock.Manufacturer, resultData.Manufacturer);
+            Assert.Equal(dataMock.YearReleased, resultData.YearReleased);
+        }
 
+        [Fact]
+        public void When_HasDiscout_Is_True_Discount_Should_Not_Be_Zero()
+        {
+            // arrange
+            WebScrapperHardwareDataRequest requestMock =
+                WebScrapperHardwareDataRequestMock.GetDefaultWebScrapperHardwareDataRequestMock();
+
+            requestMock.HasDiscount = true;
+            requestMock.Discount = (Decimal)50.00;
+            // act
+            RawHardwareData resultData = RawHardwareDataMapper.MapRawHardwareData(requestMock);
+            
+            // assert
+            Assert.NotEqual(0, resultData.Discount);
+        }
+        
+        [Fact]
+        public void When_HasDiscout_Is_False_Discount_Should_Be_Zero()
+        {
+            // arrange
+            WebScrapperHardwareDataRequest requestMock =
+                WebScrapperHardwareDataRequestMock.GetDefaultWebScrapperHardwareDataRequestMock();
+
+            requestMock.HasDiscount = false;
+            requestMock.Discount = null;
+            // act
+            RawHardwareData resultData = RawHardwareDataMapper.MapRawHardwareData(requestMock);
+            
+            // assert
+            Assert.Equal(0, resultData.Discount);
         }
     }
 }

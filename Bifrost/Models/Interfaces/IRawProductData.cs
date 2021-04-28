@@ -18,6 +18,7 @@ namespace Bifrost.Models.Interfaces
         
         Decimal? Discount { get; set; }
         
+        Decimal TotalPrice { get; set; }
         bool IsNoInterestInstallmentsAvailable { get; set; }
 
         int? MaxInstallmentsWithoutInterest { get; set; }

@@ -8,6 +8,7 @@ namespace Bifrost.Models
     public class RawHardwareData : IRawHardwareData
     {
         public string Code { get; set; }
+        public string RequisitionCode { get; set; }
         public List<string> KeywordsUsed { get; set; }
         public int YearCreated { get; set; }
         public int MonthCreated { get; set; }
@@ -22,9 +23,10 @@ namespace Bifrost.Models
         public string StoreUrl { get; set; }
         public bool IsMarketPlace { get; set; }
         public bool HasDiscount { get; set; }
-        public decimal? Discount { get; set; }
+        public decimal? Discount { get; set; } = null;
+        public decimal TotalPrice { get; set; }
         public bool IsNoInterestInstallmentsAvailable { get; set; }
-        public int? MaxInstallmentsWithoutInterest { get; set; }
+        public int? MaxInstallmentsWithoutInterest { get; set; } = null;
         public HardwareCategory Category { get; set; }
         public string Manufacturer { get; set; }
         public int YearReleased { get; set; }

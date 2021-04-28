@@ -21,6 +21,8 @@ namespace Bifrost.Models.Interfaces
         
         public int SecondCreated { get; set; }
         
+        public string RequisitionCode { get; set; }
+        
         bool IsPriority { get; set; }
     }
 }
