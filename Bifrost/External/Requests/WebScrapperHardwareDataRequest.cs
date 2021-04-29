@@ -24,9 +24,9 @@ namespace Bifrost.External.Requests
         public string StoreUrl { get; set; }
         public bool IsMarketPlace { get; set; }
         public bool HasDiscount { get; set; }
-        public decimal? Discount { get; set; }
+        public decimal Discount { get; set; } = 0;
         public bool IsNoInterestInstallmentsAvailable { get; set; }
-        public int? MaxInstallmentsWithoutInterest { get; set; }
+        public int MaxInstallmentsWithoutInterest { get; set; } = 0;
         public string Category { get; set; }
         public string Manufacturer { get; set; }
         public int YearReleased { get; set; }
@@ -49,9 +49,9 @@ namespace Bifrost.External.Requests
                                   string storeUrl,
                                   bool isMarketPlace,
                                   bool hasDiscount,
-                                  decimal? discount,
+                                  decimal discount,
                                   bool isNoInterest,
-                                  int? maxInstallmentsWithoutInterest,
+                                  int maxInstallmentsWithoutInterest,
                                   string category,
                                   string manufacturer,
                                   int yearReleased)

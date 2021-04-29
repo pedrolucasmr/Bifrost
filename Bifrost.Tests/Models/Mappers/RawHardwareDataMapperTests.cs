@@ -73,7 +73,7 @@ namespace Bifrost.Tests.Models.Mappers
                 WebScrapperHardwareDataRequestMock.GetDefaultWebScrapperHardwareDataRequestMock();
 
             requestMock.HasDiscount = false;
-            requestMock.Discount = null;
+            requestMock.Discount = 0;
             // act
             RawHardwareData resultData = RawHardwareDataMapper.MapRawHardwareData(requestMock);
             

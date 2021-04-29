@@ -28,10 +28,10 @@ namespace Bifrost.Tests.Models
                 StoreUrl = "https://www.kabum.com.br",
                 IsMarketPlace = false,
                 HasDiscount = false,
-                Discount = null,
+                Discount = 0,
                 TotalPrice = (Decimal)2800.00,
                 IsNoInterestInstallmentsAvailable = false,
-                MaxInstallmentsWithoutInterest = null,
+                MaxInstallmentsWithoutInterest = 0,
                 Category = HardwareCategory.CPU,
                 Manufacturer = "AMD",
                 YearReleased = 2020

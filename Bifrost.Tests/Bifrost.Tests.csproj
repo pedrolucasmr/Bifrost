@@ -31,7 +31,6 @@
 
     <ItemGroup>
       <Folder Include="External" />
-      <Folder Include="Mocks\Models" />
     </ItemGroup>
 
 </Project>

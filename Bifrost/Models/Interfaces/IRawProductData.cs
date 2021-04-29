@@ -16,11 +16,11 @@ namespace Bifrost.Models.Interfaces
         
         bool HasDiscount { get; set; }
         
-        Decimal? Discount { get; set; }
+        Decimal Discount { get; set; }
         
         Decimal TotalPrice { get; set; }
         bool IsNoInterestInstallmentsAvailable { get; set; }
 
-        int? MaxInstallmentsWithoutInterest { get; set; }
+        int MaxInstallmentsWithoutInterest { get; set; }
     }
 }

@@ -27,9 +27,9 @@ namespace Bifrost.Tests.Mocks.External
                         "https://www.kabum.com.br",
                         false,
                         false,
-                        null,
+                        0,
                         false,
-                        null,
+                        0,
                         "CPU",
                         "AMD",
                         2020    
