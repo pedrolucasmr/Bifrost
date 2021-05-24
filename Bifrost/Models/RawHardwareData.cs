@@ -8,7 +8,7 @@ namespace Bifrost.Models
     public class RawHardwareData : IRawHardwareData
     {
         public string Code { get; set; }
-        public string RequisitionCode { get; set; }
+        public string ExperienceCode { get; set; }
         public List<string> KeywordsUsed { get; set; }
         public int YearCreated { get; set; }
         public int MonthCreated { get; set; }

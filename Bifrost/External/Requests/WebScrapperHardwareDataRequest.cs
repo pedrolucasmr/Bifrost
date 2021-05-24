@@ -17,7 +17,7 @@ namespace Bifrost.External.Requests
         public int MinuteCreated { get; set; }
         public int SecondCreated { get; set; }
         public string RequestKey { get; set; }
-        public string RequisitionCode { get; set; }
+        public string ExperienceCode { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string StoreName { get; set; }
@@ -42,7 +42,7 @@ namespace Bifrost.External.Requests
                                   int minuteCreated,
                                   int secondCreated,
                                   string requestKey,
-                                  string requisitionCode,
+                                  string experienceCode,
                                   string name, 
                                   decimal price, 
                                   string storeName,
@@ -67,7 +67,7 @@ namespace Bifrost.External.Requests
             this.MinuteCreated = minuteCreated;
             this.SecondCreated = secondCreated;
             this.RequestKey = requestKey;
-            this.RequisitionCode = requisitionCode;
+            this.ExperienceCode = experienceCode;
             this.Name = name;
             this.Price = price;
             this.StoreName = storeName;

@@ -11,7 +11,7 @@ namespace Bifrost.Models.Mappers
             RawHardwareData rawHardwareData = new RawHardwareData();
 
             rawHardwareData.Code = request.Code;
-            rawHardwareData.RequisitionCode = request.RequisitionCode;
+            rawHardwareData.ExperienceCode = request.ExperienceCode;
             rawHardwareData.KeywordsUsed = request.KeywordsUsed;
             rawHardwareData.YearCreated = request.YearCreated;
             rawHardwareData.MonthCreated = request.MonthCreated;
@@ -20,7 +20,7 @@ namespace Bifrost.Models.Mappers
             rawHardwareData.MinuteCreated = request.MinuteCreated;
             rawHardwareData.SecondCreated = request.SecondCreated;
 
-            rawHardwareData.IsPriority = SetPriority(request.RequisitionCode);
+            rawHardwareData.IsPriority = SetPriority(request.ExperienceCode);
 
             rawHardwareData.Name = request.Name;
             rawHardwareData.StoreName = request.StoreName;
@@ -52,7 +52,7 @@ namespace Bifrost.Models.Mappers
             return rawHardwareData;
         }
 
-        private static bool SetPriority(string requisitionCode)
+        private static bool SetPriority(string experienceCode)
         {
             return false;
         }

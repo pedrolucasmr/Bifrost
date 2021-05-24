@@ -25,7 +25,7 @@ namespace Bifrost.Tests.Models.Mappers
             
             // assert
             Assert.Equal(dataMock.Code, resultData.Code);
-            Assert.Equal(dataMock.RequisitionCode, resultData.RequisitionCode);
+            Assert.Equal(dataMock.ExperienceCode, resultData.ExperienceCode);
             Assert.Equal(dataMock.KeywordsUsed, resultData.KeywordsUsed);
             Assert.Equal(dataMock.YearCreated, resultData.YearCreated);
             Assert.Equal(dataMock.MonthCreated, resultData.MonthCreated);

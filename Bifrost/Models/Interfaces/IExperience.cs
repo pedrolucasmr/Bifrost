@@ -12,7 +12,7 @@ namespace Bifrost.Models.Interfaces
         DateTime? EndsAt { get; set; }
         DateTime LastUpdatedAt { get; set; }
         int Priority { get; set; }
-        string Status { get; set; }
+        ExperienceStatus Status { get; set; }
         ExperienceType Type { get; set; }
         bool Closed { get; set; }
         List<string> Keywords { get; set; }

@@ -13,7 +13,7 @@ namespace Bifrost.Models
         public DateTime? EndsAt { get; set; } = null;
         public DateTime LastUpdatedAt { get; set; }
         public int Priority { get; set; }
-        public string Status { get; set; }
+        public ExperienceStatus Status { get; set; }
         public ExperienceType Type { get; set; }
         public bool Closed { get; set; } = false;
         public List<string> Keywords { get; set; }

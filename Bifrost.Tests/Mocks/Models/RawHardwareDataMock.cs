@@ -13,7 +13,7 @@ namespace Bifrost.Tests.Models
             return new RawHardwareData()
             {
                 Code = "20211004001",
-                RequisitionCode = "MDkd13012s",
+                ExperienceCode = "MDkd13012s",
                 KeywordsUsed = new List<string>() {"cpu", "amd"},
                 YearCreated = 2021,
                 MonthCreated = 04,
