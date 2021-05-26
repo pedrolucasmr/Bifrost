@@ -7,8 +7,6 @@ namespace Bifrost.Models.Interfaces
     {
         string Code { get; set; }
         
-        List<string> KeywordsUsed { get; set; }
-        
         public int YearCreated { get; set; }
         
         public int MonthCreated { get; set; }
@@ -22,7 +20,5 @@ namespace Bifrost.Models.Interfaces
         public int SecondCreated { get; set; }
         
         public string ExperienceCode { get; set; }
-        
-        bool IsPriority { get; set; }
     }
 }

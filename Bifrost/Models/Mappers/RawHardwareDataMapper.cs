@@ -12,15 +12,12 @@ namespace Bifrost.Models.Mappers
 
             rawHardwareData.Code = request.Code;
             rawHardwareData.ExperienceCode = request.ExperienceCode;
-            rawHardwareData.KeywordsUsed = request.KeywordsUsed;
             rawHardwareData.YearCreated = request.YearCreated;
             rawHardwareData.MonthCreated = request.MonthCreated;
             rawHardwareData.DayCreated = request.DayCreated;
             rawHardwareData.HourCreated = request.HourCreated;
             rawHardwareData.MinuteCreated = request.MinuteCreated;
             rawHardwareData.SecondCreated = request.SecondCreated;
-
-            rawHardwareData.IsPriority = SetPriority(request.ExperienceCode);
 
             rawHardwareData.Name = request.Name;
             rawHardwareData.StoreName = request.StoreName;
@@ -50,11 +47,6 @@ namespace Bifrost.Models.Mappers
             rawHardwareData.YearReleased = request.YearReleased;
             
             return rawHardwareData;
-        }
-
-        private static bool SetPriority(string experienceCode)
-        {
-            return false;
         }
 
         private static Dictionary<string,decimal> SetPriceAndDiscount(WebScrapperHardwareDataRequest request)

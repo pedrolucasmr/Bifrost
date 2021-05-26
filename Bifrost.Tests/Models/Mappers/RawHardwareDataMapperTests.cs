@@ -26,14 +26,12 @@ namespace Bifrost.Tests.Models.Mappers
             // assert
             Assert.Equal(dataMock.Code, resultData.Code);
             Assert.Equal(dataMock.ExperienceCode, resultData.ExperienceCode);
-            Assert.Equal(dataMock.KeywordsUsed, resultData.KeywordsUsed);
             Assert.Equal(dataMock.YearCreated, resultData.YearCreated);
             Assert.Equal(dataMock.MonthCreated, resultData.MonthCreated);
             Assert.Equal(dataMock.DayCreated, resultData.DayCreated);
             Assert.Equal(dataMock.HourCreated, resultData.HourCreated);
             Assert.Equal(dataMock.MinuteCreated, resultData.MinuteCreated);
             Assert.Equal(dataMock.SecondCreated, resultData.SecondCreated);
-            Assert.Equal(dataMock.IsPriority, resultData.IsPriority);
             Assert.Equal(dataMock.Name, resultData.Name);
             Assert.Equal(dataMock.Price, resultData.Price);
             Assert.Equal(dataMock.StoreName, resultData.StoreName);
