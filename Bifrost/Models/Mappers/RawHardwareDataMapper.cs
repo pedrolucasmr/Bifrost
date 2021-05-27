@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Bifrost.External.Requests;
 using Bifrost.Models.Enums;
 
@@ -12,12 +13,13 @@ namespace Bifrost.Models.Mappers
 
             rawHardwareData.Code = request.Code;
             rawHardwareData.ExperienceCode = request.ExperienceCode;
-            rawHardwareData.YearCreated = request.YearCreated;
-            rawHardwareData.MonthCreated = request.MonthCreated;
-            rawHardwareData.DayCreated = request.DayCreated;
-            rawHardwareData.HourCreated = request.HourCreated;
-            rawHardwareData.MinuteCreated = request.MinuteCreated;
-            rawHardwareData.SecondCreated = request.SecondCreated;
+            rawHardwareData.CreatedAt = new DateTime(
+                request.YearCreated,
+                request.MonthCreated,
+                request.DayCreated,
+                request.HourCreated,
+                request.MinuteCreated,
+                request.SecondCreated);
 
             rawHardwareData.Name = request.Name;
             rawHardwareData.StoreName = request.StoreName;

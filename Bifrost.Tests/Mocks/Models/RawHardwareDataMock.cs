@@ -14,12 +14,7 @@ namespace Bifrost.Tests.Models
             {
                 Code = "20211004001",
                 ExperienceCode = "MDkd13012s",
-                YearCreated = 2021,
-                MonthCreated = 04,
-                DayCreated = 10,
-                HourCreated = 15,
-                MinuteCreated = 04,
-                SecondCreated = 59,
+                CreatedAt = new DateTime(2020, 3, 23, 19, 44, 35),
                 Name = "AMD Ryzen 7 5800",
                 Price = (Decimal)2800.00,
                 StoreName = "Kabum",
